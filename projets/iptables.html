@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pare-feu avec iptables | Mohamadou Sabaly</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="../index.html#projets">Projets</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+
+    <section class="hero hero-bolt">
+        <div class="hero-bolt-content" style="max-width:800px;">
+            <img src="../assets/projet-iptables.jpg" alt="Pare-feu iptables" style="width:100%;max-width:600px;height:220px;object-fit:cover;border-radius:18px;box-shadow:0 4px 24px #0077b622;">
+            <h1>Pare-feu avec iptables sur UC recyclée</h1>
+            <p class="accroche">
+                Création d’un firewall matériel sur une vieille unité centrale, placé entre le réseau local et Internet.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-info-circle"></i> Présentation du projet</h2>
+        <p>
+            Ce projet a consisté à transformer une ancienne unité centrale en pare-feu dédié pour protéger un réseau local. 
+            Nous avons ajouté une seconde carte réseau afin de placer la machine entre le LAN et Internet, puis installé <strong>Linux</strong> pour utiliser <strong>iptables</strong> comme solution de filtrage.
+        </p>
+        <ul>
+            <li>Ajout d’une carte réseau supplémentaire</li>
+            <li>Installation de Linux (distribution légère)</li>
+            <li>Configuration avancée d’iptables</li>
+            <li>Positionnement physique entre le réseau local et la box Internet</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-shield-alt"></i> Sécurité & Tests</h2>
+        <p>
+            Plusieurs attaques et scénarios ont été simulés pour tester l’efficacité du pare-feu :
+        </p>
+        <ul>
+            <li>Protection contre les attaques DoS</li>
+            <li>Filtrage et restriction des connexions SSH</li>
+            <li>Blocage des attaques sur un serveur Apache local</li>
+            <li>Journalisation des tentatives d’intrusion</li>
+        </ul>
+        <div class="badges">
+            <span class="badge">Linux</span>
+            <span class="badge">iptables</span>
+            <span class="badge">Sécurité</span>
+            <span class="badge">Réseau</span>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-image"></i> Galerie</h2>
+        <div class="slider-projet">
+            <img src="../assets/projet-iptables.jpg" alt="Photo 1" class="slide active">
+            <img src="../assets/projet-iptables2.jpg" alt="Photo 2" class="slide">
+            <img src="../assets/projet-iptables3.jpg" alt="Photo 3" class="slide">
+            <img src="../assets/projet-iptables4.jpg" alt="Photo 4" class="slide">
+            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fas fa-link"></i> Ressources utiles</h2>
+        <ul>
+            <li><a href="https://doc.ubuntu-fr.org/iptables" target="_blank">Documentation Ubuntu-fr iptables</a></li>
+            <li><a href="https://www.netfilter.org/" target="_blank">Site officiel Netfilter</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <a href="../index.html#projets" class="btn btn-cta-bolt"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+    </footer>
+
+    <script>
+const slides = document.querySelectorAll('.slider-projet .slide');
+const prevBtn = document.querySelector('.slider-btn.prev');
+const nextBtn = document.querySelector('.slider-btn.next');
+let current = 0;
+
+function showSlide(idx) {
+    slides.forEach((img, i) => img.classList.toggle('active', i === idx));
+}
+prevBtn.onclick = () => {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+};
+nextBtn.onclick = () => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+};
+</script>
+</body>
+</html>

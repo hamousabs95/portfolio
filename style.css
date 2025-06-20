@@ -955,3 +955,214 @@ section, .timeline-item, .carte-projet, .carte-certificat, .carte-softskill {
     transform: scale(1.08) rotate(-2deg);
     box-shadow: 0 0 40px #0077b6cc;
 }
+
+/* Galerie interactive façon "card hover" adaptée au thème */
+.card-slider {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.card {
+  width: 660px;
+  height: 254px;
+  border-radius: 12px;
+  background: #f8f9fa;
+  display: flex;
+  gap: 7px;
+  padding: .4em;
+  box-shadow: 0 4px 24px #0077b622;
+}
+.card p {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all .5s;
+  background: #e9ecef;
+  border: 2px solid #0077b6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+}
+.card p:hover {
+  flex: 4;
+  z-index: 2;
+  background: #fff;
+  border-color: #ff5a91;
+  box-shadow: 0 0 24px #0077b644;
+}
+.card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+  transition: transform .5s;
+  box-shadow: 0 2px 12px #0077b622;
+  background: #fff;
+}
+.card p:hover .card-img {
+  transform: scale(1.08);
+  box-shadow: 0 4px 24px #ff5a9188;
+}
+.card p span {
+  min-width: 12em;
+  padding: .5em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all .5s;
+  text-transform: uppercase;
+  color: #0077b6;
+  letter-spacing: .1em;
+  font-weight: bold;
+  background: rgba(255,255,255,0.85);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.card p:hover span {
+  transform: rotate(0);
+  background: #0077b6;
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .card {
+    width: 98vw;
+    min-width: 0;
+  }
+  .card-img {
+    height: 100px;
+  }
+}
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    height: auto;
+  }
+  .card p {
+    flex: unset;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .card-img {
+    width: 100%;
+    height: 120px;
+  }
+}
+
+/* Carte compétence style notification Uiverse.io adaptée */
+.notification.competence {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  position: relative;
+  width: 18rem;
+  min-height: 8rem;
+  background: #f8f9fa;
+  border-radius: 1rem;
+  overflow: hidden;
+  font-family: 'Segoe UI', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  --gradient: linear-gradient(to bottom, #00a8ff, #0077B6, #3d83ff);
+  --color: #0077B6;
+  margin: 1rem auto;
+  box-shadow: 0 4px 24px #0077b622;
+}
+
+.notification.competence:before {
+  position: absolute;
+  content: "";
+  inset: 0.0625rem;
+  border-radius: 0.9375rem;
+  background: #fff;
+  z-index: 2;
+}
+
+.notification.competence:after {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  inset: 0.65rem auto 0.65rem 0.5rem;
+  border-radius: 0.125rem;
+  background: var(--gradient);
+  transition: transform 300ms ease;
+  z-index: 4;
+}
+
+.notification.competence:hover:after {
+  transform: translateX(0.15rem)
+}
+
+.notification.competence .notititle {
+  color: var(--color);
+  padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.notification.competence:hover .notititle {
+  transform: translateX(0.15rem)
+}
+
+.notification.competence .notibody {
+  color: #222;
+  padding: 0 1.25rem 1rem 1.25rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+}
+.notification.competence:hover .notibody {
+  transform: translateX(0.25rem)
+}
+.notification.competence ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.notification.competence li {
+  margin-bottom: 0.3em;
+  font-size: 1rem;
+}
+
+.notiglow,
+.notiborderglow {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle closest-side at center, #00a8ff, transparent);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.notiglow {
+  z-index: 3;
+}
+
+.notiborderglow {
+  z-index: 1;
+}
+
+.notification.competence:hover .notiglow {
+  opacity: 0.08
+}
+
+.notification.competence:hover .notiborderglow {
+  opacity: 0.08
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .notification.competence {
+    width: 98vw;
+    min-width: 0;
+    font-size: 15px;
+  }
+}
+

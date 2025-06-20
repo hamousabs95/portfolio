@@ -82,16 +82,24 @@ iptables -A INPUT -m state --state INVALID -j DROP
         <img src="../assets/projet-iptables2.jpg" alt="Test iptables" style="width:100%;max-width:600px;margin-bottom:20px;border-radius:12px;">
     </section>
 
-    <section>
-        <div class="slider-projet">
-            <img src="../assets/projet-iptables.jpg" class="slide active" alt="iptables 1">
-            <img src="../assets/projet-iptables2.jpg" class="slide" alt="iptables 2">
-            <img src="../assets/projet-iptables3.jpg" class="slide" alt="iptables 3">
+    <!-- Galerie interactive façon "card hover" -->
+    <div class="card-slider">
+        <div class="card">
+            <p>
+                <img src="../assets/projet-iptables.jpg" alt="iptables 1" class="card-img">
+                <span>Carte reseaux</span>
+            </p>
+            <p>
+                <img src="../assets/projet-iptables2.jpg" alt="iptables 2" class="card-img">
+                <span>Hadware</span>
+            </p>
+            <p>
+                <img src="../assets/projet-iptables3.jpg" alt="iptables 3" class="card-img">
+                <span>Config & Supervision</span>
+            </p>
             <!-- Ajoute d'autres images si besoin -->
-            <button class="slider-btn prev" aria-label="Image précédente"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-btn next" aria-label="Image suivante"><i class="fas fa-chevron-right"></i></button>
         </div>
-    </section>
+    </div>
 
     <footer>
         <a href="../index.html#projets" class="btn btn-cta-bolt"><i class="fas fa-arrow-left"></i> Retour aux projets</a>

@@ -45,3 +45,36 @@ if (accueilTitle) {
 document.querySelector('.navbar-toggle').onclick = function() {
     document.querySelector('.navbar-links').classList.toggle('open');
 };
+
+// Navbar responsive
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.navbar-toggle');
+    const links = document.querySelector('.navbar-links');
+    if(toggle && links) {
+        toggle.onclick = () => links.classList.toggle('open');
+    }
+});
+
+// Slider d'images pour projets
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slider-projet .slide');
+    const prevBtn = document.querySelector('.slider-btn.prev');
+    const nextBtn = document.querySelector('.slider-btn.next');
+    let current = 0;
+
+    function showSlide(idx) {
+        if (!slides.length) return;
+        slides.forEach((img, i) => img.classList.toggle('active', i === idx));
+    }
+    if(prevBtn && nextBtn && slides.length) {
+        prevBtn.onclick = () => {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        };
+        nextBtn.onclick = () => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        };
+        showSlide(current);
+    }
+});

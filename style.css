@@ -108,6 +108,32 @@ nav a:hover {
     border-radius: 2px;
     transition: 0.3s;
 }
+@media (max-width: 700px) {
+    .navbar-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+        box-shadow: 0 8px 32px #0077b622;
+        display: none;
+    }
+    .navbar-links.open {
+        display: flex;
+        animation: fadeInMenu 0.3s;
+    }
+    .navbar-toggle {
+        display: flex;
+    }
+}
+@keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
 
 /* Hero Section */
 .hero {
@@ -676,47 +702,46 @@ footer {
 /* Slider Projet */
 .slider-projet {
     position: relative;
-    max-width: 900px;         /* Augmente la largeur max */
+    width: 100%;
+    max-width: 600px;
+    height: 240px;
     margin: 2rem auto;
     overflow: hidden;
-    border-radius: 24px;      /* Plus arrondi si tu veux */
-    box-shadow: 0 4px 24px #0077b622;
     background: #e9ecef;
-    min-height: 380px;        /* Augmente la hauteur */
+    border-radius: 18px;
 }
 .slider-projet .slide {
     display: none;
     width: 100%;
-    height: 380px;            /* Augmente la hauteur */
+    height: 100%;
     object-fit: cover;
-    border-radius: 24px;
-    transition: opacity 0.5s;
+    border-radius: 18px;
     position: absolute;
-    left: 0; top: 0;
+    top: 0; left: 0;
 }
 .slider-projet .slide.active {
     display: block;
     position: relative;
+    z-index: 1;
 }
 .slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: #fff;
+    background: #0077b6cc;
+    color: #fff;
     border: none;
     border-radius: 50%;
-    width: 44px;
-    height: 44px;
-    font-size: 1.5rem;
-    color: #0077B6;
-    box-shadow: 0 2px 8px #0077b622;
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
     cursor: pointer;
     z-index: 2;
-    opacity: 0.85;
+    transition: background 0.2s;
 }
-.slider-btn.prev { left: 18px; }
-.slider-btn.next { right: 18px; }
-.slider-btn:hover { background: #00a8ff; color: #fff; }
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+.slider-btn:hover { background: #023e8a; }
 
 /* Footer Moderne */
 .footer-modern {

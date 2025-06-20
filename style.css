@@ -37,6 +37,78 @@ nav a:hover {
     color: var(--bleu-reseau);
 }
 
+/* Modern Navbar */
+.navbar {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 16px #0077b622;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 2rem;
+}
+.navbar-logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #0077B6;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+.navbar-logo .logo-m {
+    color: #0077B6;         /* Bleu principal */
+    font-weight: bold;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+}
+.navbar-logo .logo-sabaly {
+    color: #00a8ff;         /* Bleu clair ou autre couleur de ton choix */
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.navbar-links a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.08rem;
+    transition: color 0.2s;
+    position: relative;
+}
+.navbar-links a:hover,
+.navbar-links a.active {
+    color: #0077B6;
+}
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 5px;
+}
+.navbar-toggle .bar {
+    width: 28px;
+    height: 4px;
+    background: #0077B6;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
 /* Hero Section */
 .hero {
     text-align: center;

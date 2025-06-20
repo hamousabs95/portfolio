@@ -40,3 +40,8 @@ if (accueilTitle) {
     }
     typeWriter();
 }
+
+// 5. Toggle de la navbar sur mobile
+document.querySelector('.navbar-toggle').onclick = function() {
+    document.querySelector('.navbar-links').classList.toggle('open');
+};

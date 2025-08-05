@@ -754,6 +754,28 @@ footer {
     box-shadow: 0 -4px 24px #0077b633;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.footer-modern .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* Ajouté pour aligner en haut */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 1rem 1rem;
+}
+.footer-modern .footer-contact-form {
+    max-width: 340px; /* Réduit la largeur du formulaire pour l'harmoniser */
+    width: 100%;
+}
+.footer-modern .footer-contact,
+.footer-modern .footer-links,
+.footer-modern .footer-social {
+    width: 100%;
+    max-width: 300px;
+    min-width: 220px;
+    box-sizing: border-box;
+}
 .footer-content {
     display: flex;
     flex-wrap: wrap;

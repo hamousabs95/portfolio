@@ -78,3 +78,21 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(current);
     }
 });
+
+// Gestion du lien actif dans la navbar selon la section visible
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.navbar-links a[href^="#"], .navbar-links a[href^="index.html#"]');
+    const sections = Array.from(links)
+        .map(link => document.querySelector(link.getAttribute('href').replace('index.html', '')))
+        .filter(Boolean);
+
+    function setActiveLink() {
+        let index = sections.length;
+        while (--index && window.scrollY + 120 < sections[index].offsetTop) {}
+        links.forEach(link => link.classList.remove('active'));
+        if (links[index]) links[index].classList.add('active');
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+});
